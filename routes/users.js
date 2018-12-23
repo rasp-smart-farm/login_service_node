@@ -3,6 +3,8 @@ var users = express.Router();
 var database = require("../database/database");
 var cors = require("cors");
 var jwt = require("jsonwebtoken");
+var passwordHash = require('password-hash');
+
 var token;
 
 users.use(cors());
@@ -19,7 +21,7 @@ users.post("/register", function (req, res) {
 		first_name: req.body.first_name,
 		last_name: req.body.last_name,
 		email: req.body.email,
-		password: req.body.password,
+		password: passwordHash.generate(req.body.password),
 		role_id: 1,
 		created: today
 	};
@@ -72,7 +74,7 @@ users.post("/login", function (req, res) {
 					res.status(400).json(appData);
 				} else {
 					if (rows.length > 0) {
-						if (rows[0].password == password) {
+						if (passwordHash.verify(password, rows[0].password)) {
 							token = jwt.sign(rows[0], process.env.SECRET_KEY, {
 								expiresIn: "7d"
 							});
