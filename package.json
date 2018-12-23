@@ -1,0 +1,27 @@
+{
+  "name": "login_service_node",
+  "version": "1.0.0",
+  "description": "nodejs login service with jwt token for SmartFarm IOT Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "jwt",
+    "passport",
+    "express"
+  ],
+  "author": "Devesh Vyas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^7.4.2",
+    "mysql": "^2.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
