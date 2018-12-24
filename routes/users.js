@@ -78,6 +78,7 @@ users.post("/login", function (req, res) {
 							token = jwt.sign(rows[0], process.env.SECRET_KEY, {
 								expiresIn: "7d"
 							});
+							res.cookie('token', token, { httpOnly: true, maxAge: 10080000 });
 							appData.error = 0;
 							appData["data"] = token;
 							res.status(200).json(appData);

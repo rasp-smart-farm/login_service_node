@@ -2,7 +2,7 @@ var mysql = require('mysql');
 
 var connection = mysql.createPool({
     connectionLimit: 100,
-    host:'localhost',
+    host:'pi.toannhu.com',
     user:'root',
     password:'Anhhung94',
     database:'smart_farm',

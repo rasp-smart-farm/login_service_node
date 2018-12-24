@@ -4,7 +4,7 @@
   "description": "nodejs login service with jwt token for SmartFarm IOT Project",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon login_server.js"
   },
   "keywords": [
     "nodejs",
