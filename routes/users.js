@@ -80,7 +80,7 @@ users.post("/login", function (req, res) {
 							});
 							res.cookie('token', token, { httpOnly: true, maxAge: 10080000 });
 							appData.error = 0;
-							appData["data"] = token;
+							// appData["data"] = token;
 							res.status(200).json(appData);
 						} else {
 							appData.error = 1;
